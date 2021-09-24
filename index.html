@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>体格診断サイト</title>
+</head>
+<body>
+    <h1>体格診断サイト！！(仮)</h1>
+    <p>作成者:林たっかー　@takka0407</p>
+    <label for="sedai">世代を選択してください</label>
+    <select id="sedai" name="sedai">
+        <option value="1" selected>1世代</option>
+        <option value="2">2世代</option>
+        <option value="3">3世代</option>
+        <option value="4">4世代</option>
+    </select>
+
+    <label for="kaihi">回避率を選択してください</label>
+    <select id="kaihi" name="kaihi">
+        <option value="0" selected>回避0</option>
+        <option value="3">回避3</option>
+        <option value="6">回避6</option>
+        <option value="10">回避10</option>
+        <option value="15">回避15</option>
+    </select>
+<br>
+    <label for="anntena">アンテナを選択してください</label>
+    <select id="anntena" name="anntena">
+        <option value="0" selected>アンテナ無し</option>
+        <option value="1">捕獲・全体攻撃・弱体・無敵・眠り麻痺毒</option>
+        <option value="2">単体攻撃</option>
+        <option value="3">治療系</option>
+        <option value="4">げどく</option>
+        <option value="5">単体増強系</option>
+        <option value="6">全体増強系</option>
+        <option value="7">単体回復</option>
+        <option value="8">単体復活</option>
+        <option value="9">みんな回復</option>
+        <option value="10">みんな復活</option>
+    </select>
+<br>
+    <label for="HP">HPを入力してください</label>
+    <input type=text id="HP" name="HP" size="8">
+
+    <button id="btn" name="btn" value="test">判定！</button>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#btn").click(function () {
+        var kaihi2 = $("#kaihi").val();
+        var HP2 = $("#HP").val();
+        var sedai2 = $("#sedai").val();
+        var anntena2 = $("#anntena").val();
+
+        if (sedai2 != 1 && HP2 == 45 && kaihi2 == 0 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0最大です";
+        } else if (sedai2 != 1 && HP2 == 42 && kaihi2 == 0 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0準大です";
+        } else if (sedai2 != 1 && HP2 == 40 && kaihi2 == 0 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0中間です";
+        } else if (sedai2 != 1 && HP2 == 37 && kaihi2 == 3 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0準速です";
+        } else if (sedai2 != 1 && HP2 == 34 && kaihi2 == 3 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0最速です";
+
+        } else if (sedai2 != 1 && HP2 == 42 && kaihi2 == 3 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避3最大です";
+        
+
+        } else if (sedai2 == 1 && HP2 == 40 && kaihi2 == 0 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0最大です";
+        } else if (sedai2 == 1 && HP2 == 37 && kaihi2 == 0 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0準大です";
+        } else if (sedai2 == 1 && HP2 == 35 && kaihi2 == 0 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0中間です";
+        } else if (sedai2 == 1 && HP2 == 32 && kaihi2 == 3 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0準速です";
+        } else if (sedai2 == 1 && HP2 == 29 && kaihi2 == 3 && anntena2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避0最速です";
+
+        } else {
+            document.getElementById("kekka").innerHTML = "ググれカス";
+        }
+});
+    </script>
+    <p>↓結果↓</p>
+    <div id="kekka"></div>
+</body>
+</html>
