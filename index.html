@@ -108,6 +108,17 @@
     window.onload = function(){
         document.getElementById("kaihi3tyuui").innerHTML = "攻撃力と防御力は入力しないでOKです。";
     }
+//レベル16で二属性固定
+    $(function() {
+    $("select[name='lv']").change(function() {
+    if( $(this).val() == '16' ) {
+      $("select[name='anntena']").val("2");
+      $("select[name='annetna']").disableSelection();
+    } else {
+      $("select[name='anntena']").enableSelection();
+    }
+  });
+});
 //世代ごとに各Lvの表示を変更
        document.addEventListener("DOMContentLoaded", function(){
         var firstChange = ($("#lv").val() == "");
