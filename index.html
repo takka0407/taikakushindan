@@ -8,7 +8,7 @@
 <body>
     <h1 div class="title">体格診断サイト！！(仮)</h1></div>
     <p>作成者:林たっかー　@takka0407</p>
-    <a href="https://twitter.com/takka0407?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="true">Follow @takka0407</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a href="https://twitter.com/takka0407?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="true">Follow @takka0407</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
     <p>対応したもの、回避0～15まですべてのアン無・捕獲系・全体増強の1世代Lv1,Lv15(アン無・捕獲のみ)<br>
         2～4世代Lv1,回避6全体攻撃の1,2世代Lv10。回避6二属性のLv16。体格が分かる協力者求む</p>
     <label for="sedai">世代を選択してください</label>
@@ -17,6 +17,8 @@
         <option value="2">2世代</option>
         <option value="3">3世代</option>
         <option value="4">4世代</option>
+        <option value="5">5世代</option>
+        <option value="6">6世代</option>
     </select>
     <br>
     <label for="lv">レベルを選択してください</label>
@@ -25,6 +27,8 @@
         <option value="1"data-category="2" selected>レベル1</option>
         <option value="1"data-category="3" selected>レベル1</option>
         <option value="1"data-category="4" selected>レベル1</option>
+        <option value="1"data-category="5" selected>レベル1</option>
+        <option value="1"data-category="6" selected>レベル1</option>
         <option value="10" data-category="1" >レベル10</option>
         <option value="10" data-category="2" >レベル10</option>
         <option value="10" data-category="3" >レベル10</option>
@@ -33,6 +37,8 @@
         <option value="30" data-category="2" >レベル30</option>
         <option value="50" data-category="3">レベル50</option>
         <option value="70" data-category="4">レベル70</option>
+        <option value="70" data-category="5">レベル100</option>
+        <option value="70" data-category="6">レベル150</option>
     </select>
 
 <br>
@@ -64,6 +70,7 @@
         <option value="9" hidden>単体復活</option>
         <option value="10" hidden>みんな回復</option>
         <option value="11">みんな復活</option>
+        <option value="12">免疫ダウン・たたり</option>
     </select>
 <br>
     <label for="HP">HPを入力してください</label>
@@ -109,6 +116,7 @@
     window.onload = function(){
         document.getElementById("kaihi3tyuui").innerHTML = "攻撃力と防御力は入力しないでOKです。";
     }
+
 //レベル16で二属性固定
     $(function() {
     $("select[name='lv']").change(function() {
@@ -120,6 +128,7 @@
     }
   });
 });
+
 //世代ごとに各Lvの表示を変更
        document.addEventListener("DOMContentLoaded", function(){
         var firstChange = ($("#lv").val() == "");
@@ -151,7 +160,7 @@
             } else if (kaihivalue == 3) {
                 document.getElementById("kaihi3tyuui").innerHTML = "攻撃力を入力してください。";
             } else if (kaihivalue == 6) {
-                document.getElementById("kaihi3tyuui").innerHTML = "攻撃力と防御力を入力してください。";
+                document.getElementById("kaihi3tyuui").innerHTML = "攻撃力と防御力を入力してください。銀の場合はペイント使ってください。";
             }
     });
 });
@@ -170,7 +179,7 @@
             } else if (kaihivalue == 3) {
                 document.getElementById("kaihi3tyuui").innerHTML = "攻撃力を入力してください。";
             } else if (kaihivalue == 6) {
-                document.getElementById("kaihi3tyuui").innerHTML = "防御力を入力してください。銀の場合はペイント使ってください。";
+                document.getElementById("kaihi3tyuui").innerHTML = "攻撃力と防御力を入力してください。銀の場合はペイント使ってください。";
             }
     });
 }); 
@@ -276,9 +285,9 @@
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 37 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 34 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6準大+、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 32 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 29 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 26 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
@@ -287,9 +296,9 @@
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 32 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 29 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6準大+、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 27 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 24 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 21 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
@@ -300,9 +309,9 @@
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 166 && kaihi2 == 6 && anntena2 == 0 && kougeki2 == 36 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大+です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 166 && kaihi2 == 6 && anntena2 == 0 && kougeki2 == 38 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大です";
-        } else if (lv2 == 15 && sedai2 == 1 && HP2 == 151 && kaihi2 == 6 && anntena2 == 0 && kougeki2 == 34 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6準大+です";
+        } else if (lv2 == 15 && sedai2 == 1 && HP2 == 151 && kaihi2 == 6 && anntena2 == 0 && kougeki2 == 34 && renga2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避6準大です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 135 && kaihi2 == 6 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 151 && kaihi2 == 6 && anntena2 == 0 && kougeki2 == 38 && renga2 == 0) {
@@ -317,23 +326,23 @@
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 23 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避10最速です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 29 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10中間です";
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 32 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10準大(最大)です";
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
 //Lv1回避10アンテナ無しノマキャ
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 18 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避10最速です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 24 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10中間です";
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 27 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10準大(最大)です";
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
 //Lv15回避10アンテナ無し1世代
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 105 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避10最速です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 135 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10中間です";
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 151 && kaihi2 == 10 && anntena2 == 0 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10準大(最大)です";
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
 //Lv1回避15アンテナ無し2世代
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 21 && kaihi2 == 15 && anntena2 == 0 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避15最速です";
@@ -452,9 +461,9 @@
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 35 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 32 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6準大+、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 30 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 27 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 25 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
@@ -463,9 +472,9 @@
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 30 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 27 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6準大+、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 25 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 22 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 20 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
@@ -476,9 +485,9 @@
         } else if (lv2 == 10 && sedai2 == 1 && HP2 == 106 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 17 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大+です";
         } else if (lv2 == 10 && sedai2 == 1 && HP2 == 106 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 19 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大です";
-        } else if (lv2 == 10 && sedai2 == 1 && HP2 == 97 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 16 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6準大+です";
+        } else if (lv2 == 10 && sedai2 == 1 && HP2 == 97 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 16 && renga2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避6準大です";
         } else if (lv2 == 10 && sedai2 == 1 && HP2 == 87 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 10 && sedai2 == 1 && HP2 == 97 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 19 && renga2 == 0) {
@@ -495,9 +504,9 @@
         } else if (lv2 == 10 && sedai2 == 2 && HP2 == 111 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 18 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大+です";
         } else if (lv2 == 10 && sedai2 == 2 && HP2 == 111 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 20 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大です";
-        } else if (lv2 == 10 && sedai2 == 2 && HP2 == 102 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 17 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6準大+です";
+        } else if (lv2 == 10 && sedai2 == 2 && HP2 == 102 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 17 && renga2 == 0) {
+            document.getElementById("kekka").innerHTML = "回避6準大です";
         } else if (lv2 == 10 && sedai2 == 2 && HP2 == 92 && kaihi2 == 6 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 10 && sedai2 == 2 && HP2 == 102 && kaihi2 == 6 && anntena2 == 1 && kougeki2 == 20 && renga2 == 0) {
@@ -532,23 +541,23 @@
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 22 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避10最速です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 27 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10中間です";
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 30 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10準大(最大)です";
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
 //Lv1回避10捕獲ノマキャ
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 17 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避10最速です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 22 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10中間です";
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
         } else if (lv2 == 1 && sedai2 == 1 && HP2 == 25 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10準大(最大)です";
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
 //Lv15回避10捕獲1世代
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 96 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避10最速です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 124 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10中間です";
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 138 && kaihi2 == 10 && anntena2 == 1 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10準大(最大)です";
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
 //Lv1回避15捕獲2世代
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 20 && kaihi2 == 15 && anntena2 == 1 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避15最速です";
@@ -605,9 +614,9 @@
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 34 && kaihi2 == 6 && anntena2 == 7 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 32 && kaihi2 == 6 && anntena2 == 7 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6準大+、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 30 && kaihi2 == 6 && anntena2 == 7 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大+の可能性があります。<br>Lv15にしないと分かりません。";
+            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大の可能性があります。<br>Lv15にしないと分かりません。";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 28 && kaihi2 == 6 && anntena2 == 7 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 26 && kaihi2 == 6 && anntena2 == 7 && renga2 == 0) {
@@ -619,9 +628,9 @@
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 24 && kaihi2 == 10 && anntena2 == 7 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避10最速です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 28 && kaihi2 == 10 && anntena2 == 7 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10中間です";
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
         } else if (lv2 == 1 && sedai2 != 1 && HP2 == 30 && kaihi2 == 10 && anntena2 == 7 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避10準大(最大)です";
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
 
 //Lv15回避10全体増強1世代
 
@@ -642,13 +651,13 @@
         } else if (lv2 == 16 && sedai2 == 4 && HP2 == 177 && kaihi2 == 6 && anntena2 == 2 && kougeki2 == 30 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6最大+です";
         } else if (lv2 == 16 && sedai2 == 4 && HP2 == 177 && kaihi2 == 6 && anntena2 == 2 && kougeki2 == 31 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大です";
+            document.getElementById("kekka").innerHTML = "回避6準大+です";
         } else if (lv2 == 16 && sedai2 == 4 && HP2 == 177 && kaihi2 == 6 && anntena2 == 2 && kougeki2 == 32 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大です";
+            document.getElementById("kekka").innerHTML = "回避6準大+です";
         } else if (lv2 == 16 && sedai2 == 4 && HP2 == 162 && kaihi2 == 6 && anntena2 == 2 && kougeki2 == 27 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大+です";
+            document.getElementById("kekka").innerHTML = "回避6準大です";
         } else if (lv2 == 16 && sedai2 == 4 && HP2 == 162 && kaihi2 == 6 && anntena2 == 2 && kougeki2 == 28 && renga2 == 0) {
-            document.getElementById("kekka").innerHTML = "回避6準大+です";
+            document.getElementById("kekka").innerHTML = "回避6準大です";
         } else if (lv2 == 16 && sedai2 == 4 && HP2 == 146 && kaihi2 == 6 && anntena2 == 2 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避6中間です";
         } else if (lv2 == 16 && sedai2 == 4 && HP2 == 162 && kaihi2 == 6 && anntena2 == 2 && kougeki2 == 31 && renga2 == 0) {
@@ -672,6 +681,104 @@
             document.getElementById("kekka").innerHTML = "回避0準速です";
         } else if (lv2 == 15 && sedai2 == 1 && HP2 == 160 && kaihi2 == 0 && anntena2 == 11 && renga2 == 0) {
             document.getElementById("kekka").innerHTML = "回避0最速です";
+//Lv1回避0ダルダル5世代レンガ
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 42 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0最大です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 39 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0準大です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 37 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0中間です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 34 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0準速です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 32 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0最速です";
+//Lv1回避3ダルダル5世代レンガ
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 39 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3最大です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 37 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3準大、又は中間2+の可能性があります。<br>Lv100にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 34 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3中間2、又は中間+の可能性があります。<br>Lv100にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 32 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3準速+、又は中間の可能性があります。<br>Lv100にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 26 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3最速です";   
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 30 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3準速、又は最速+の可能性があります。<br>Lv100にしないと分かりません。";
+//Lv1回避6ダルダル5世代レンガ
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 34 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6最大です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 32 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6準大+、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 30 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大の可能性があります。<br>Lv15にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 26 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6中間です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 24 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6準速です";
+//Lv1回避10ダルダル5世代レンガ
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 22 && kaihi2 == 10 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避10最速です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 26 && kaihi2 == 10 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 30 && kaihi2 == 10 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
+//Lv1回避15ダルダル5世代レンガ
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 19 && kaihi2 == 15 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避15最速です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 22 && kaihi2 == 15 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避15準速です";
+        } else if (lv2 == 1 && sedai2 == 5 && HP2 == 24 && kaihi2 == 15 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避15中間です";
+//Lv1回避0ダルダル6世代レンガ
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 42 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0最大です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 39 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0準大です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 37 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0中間です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 34 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0準速です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 32 && kaihi2 == 0 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避0最速です";
+//Lv1回避3ダルダル6世代レンガ
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 39 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3最大です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 37 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3準大、又は中間2+の可能性があります。<br>Lv100にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 34 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3中間2、又は中間+の可能性があります。<br>Lv100にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 32 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3準速+、又は中間の可能性があります。<br>Lv100にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 26 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3最速です";   
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 30 && kaihi2 == 3 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避3準速、又は最速+の可能性があります。<br>Lv100にしないと分かりません。";
+//Lv1回避6ダルダル6世代レンガ
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 34 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6最大です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 32 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6準大+、又は最大+の可能性があります。<br>Lv15にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 30 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6最速・準速+・中間+・準大の可能性があります。<br>Lv15にしないと分かりません。";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 26 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6中間です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 24 && kaihi2 == 6 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避6準速です";
+//Lv1回避10ダルダル6世代レンガ
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 22 && kaihi2 == 10 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避10最速です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 26 && kaihi2 == 10 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避10中間(準大)です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 30 && kaihi2 == 10 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避10中間(最大)です";
+//Lv1回避15ダルダル6世代レンガ
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 19 && kaihi2 == 15 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避15最速です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 22 && kaihi2 == 15 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避15準速です";
+        } else if (lv2 == 1 && sedai2 == 6 && HP2 == 24 && kaihi2 == 15 && anntena2 == 12 && renga2 == 1) {
+            document.getElementById("kekka").innerHTML = "回避15中間です";
 //未実装
         } else {
             document.getElementById("kekka").innerHTML = "まだ未実装のようです。";
@@ -688,6 +795,7 @@
         Rootさんの表を参考に回避6全体攻撃の1，2世代Lv10の値を入れました。</h3>
     <h3>21/10/01:レアキャの回避6Lv16の2属性、回避0Lv15捕獲、回避3回避6捕獲の一部の値を入れました。</h3>
     <h3>21/10/05:回避3回避6回避10回避15のLv15時の捕獲系アンテナの値を入れました。レンガの部分も入れましたが、まだ対応してません。</h3>
+    <h3>21/10/07:要望のあった5・6世代Lv1レンガの免疫ダウンの値を入れました。</h3>
     <h2>補足</h2>
     <h4>体格は最大、準大、中間、準速、最速でわけていて、「+」については「+」がついてない体格と素早さは同じですが<br 
         >HPなどが異なります。かといってHPが多かったり少なかったり、はたまた同じだったりもう様々です。()<br>
